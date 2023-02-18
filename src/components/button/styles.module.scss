@@ -1,0 +1,10 @@
+@import "../../styles/variables.module";
+
+.primary {
+    background-color: $blue;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    padding: 1.1rem;
+    border-radius: 30px;
+}

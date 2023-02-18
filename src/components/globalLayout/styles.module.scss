@@ -1,0 +1,21 @@
+@import "../../styles/variables.module";
+
+.layout {
+    max-width: 1700px;
+    margin: 0 auto;
+    width: 90%;
+    flex: 1;
+}
+
+.mainBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.backgroundImg {
+    background-image: url("/imgs/background.png");
+    background-color: $primary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

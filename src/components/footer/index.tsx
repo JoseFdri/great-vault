@@ -1,5 +1,9 @@
 import { FC } from "react";
 
 export const Footer: FC = () => {
-  return <footer>Developed by Jose Rodriguez</footer>;
+  return (
+    <footer>
+      <span>Developed by Jose Rodriguez</span>
+    </footer>
+  );
 };

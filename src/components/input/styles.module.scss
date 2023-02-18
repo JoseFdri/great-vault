@@ -1,0 +1,41 @@
+@import "../../styles/variables.module";
+
+.box {
+    background-color: $primary;
+    padding: 12px 15px 12px 15px;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid $primary;
+    cursor: text;
+    transition: all 100ms ease-in;
+    label {
+        font-size: 0.7rem;
+        color: $secondary;
+    }
+}
+
+.focus {
+    border: 1px solid $blue;
+}
+
+.imgFluid {
+    position: relative;
+    width: 20px;
+}
+
+.inputWrap {
+    display: flex;
+}
+
+.interactiveIcon {
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    border: 0px;
+    outline: none;
+    margin-top: 5px;
+    background-color: $primary;
+    transition: all 0.3s ease;
+}

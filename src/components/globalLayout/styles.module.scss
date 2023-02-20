@@ -10,11 +10,11 @@
 .mainBox {
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
 
 .backgroundImg {
     background-image: url("/imgs/background.png");
-    background-color: $primary;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

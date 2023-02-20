@@ -11,16 +11,17 @@ type DashboardLayoutProps = {
 };
 
 const isImgBackground = (pathname: string) => {
-  const pagesWithImg = ["/create-account"];
+  const pagesWithImg = ["/sign-up", "/sign-in"];
   return pagesWithImg.includes(pathname);
 };
 
 export const Layout = ({ children }: DashboardLayoutProps) => {
   const router = useRouter();
   const backgroundClass = isImgBackground(router.pathname) ? styles.backgroundImg : "";
+
   return (
     <div className={`${backgroundClass} ${styles.mainBox} minh100vh`}>
-      <Header title="My keys" description="Your favorite digital key holder" faviconUrl="/favicon.ico" />
+      <Header title="The Great Vault" description="Your favorite digital key holder" faviconUrl="/favicon.ico" />
       <div className={styles.layout}>
         <Navbar />
         {children}

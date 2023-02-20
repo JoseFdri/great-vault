@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 
 type ButtonProps = {
   type: string;
+  classes: string[];
   link: string;
   children: React.ReactNode;
   style?: Record<string, string>;

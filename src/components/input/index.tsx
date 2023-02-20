@@ -6,17 +6,20 @@ type textInputProps = {
   type: string;
   label: string;
   placeholder?: string;
-  icons: {
+  id: string;
+  name: string;
+  icons?: {
     firstUrl?: string;
     secondUrl?: string;
   };
 };
 
-export const Input: FC<textInputProps> = ({ type, label, placeholder, icons }: textInputProps) => {
+export const Input: FC<textInputProps> = ({ type, id, name, label, placeholder, icons }: textInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [focusClass, setFocusClass] = useState("");
   const [iconUrl, setIconUrl] = useState<string>(icons?.firstUrl ?? "");
   const [inputType, setInputType] = useState(type);
+
   const inputTypeText = "text";
   const inputTypePassword = "password";
 
@@ -26,29 +29,34 @@ export const Input: FC<textInputProps> = ({ type, label, placeholder, icons }: t
   };
 
   const onIconClick = () => {
-    if (icons.secondUrl && iconUrl === icons.firstUrl) {
+    if (icons?.secondUrl && iconUrl === icons.firstUrl) {
       setIconUrl(icons.secondUrl);
       setInputType(inputTypeText);
-    } else if (icons.firstUrl) {
+    } else if (icons?.firstUrl) {
       setIconUrl(icons.firstUrl);
       setInputType(inputTypePassword);
     }
   };
 
+  const iconHtml = (
+    <div className={styles.imgFluid}>
+      <Image
+        src={iconUrl}
+        alt={label}
+        fill={true}
+        className={icons?.secondUrl ? styles.interactiveIcon : ""}
+        onClick={onIconClick}
+      />
+    </div>
+  );
+
   return (
     <div className={`${styles.box} ${focusClass}`} onClick={focus} onBlur={() => setFocusClass("")}>
-      <label htmlFor="">{label}</label>
+      <label htmlFor={name}>{label}</label>
       <div className={styles.inputWrap}>
-        <input ref={inputRef} type={inputType} className={styles.input} placeholder={placeholder} />
-        <div className={styles.imgFluid}>
-          <Image
-            src={iconUrl}
-            alt={label}
-            fill={true}
-            className={icons?.secondUrl ? styles.interactiveIcon : ""}
-            onClick={onIconClick}
-          />
-        </div>
+        <input ref={inputRef} type={inputType} id={id} name={name} className={styles.input} placeholder={placeholder} />
+
+        {iconUrl && iconHtml}
       </div>
     </div>
   );

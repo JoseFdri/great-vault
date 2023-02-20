@@ -1,3 +1,5 @@
+@import "./variables.module.scss";
+
 html,
 body {
   padding: 0;
@@ -29,6 +31,44 @@ footer {
   display: flex;
   justify-content: center;
   padding: 10px 0;
+}
+
+.mainBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.txtBlue {
+  color: $blue;
+}
+
+.btnPrimary {
+  background-color: $blue;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  padding: 1.1rem;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btnLink {
+  color: $blue;
+  background-color: transparent;
+  border: 0;
+  width: auto;
+  cursor: pointer;
+}
+
+.txtCenter {
+  text-align: center;
+}
+
+.smallLegend {
+  font-size: 0.7rem;
 }
 
 @media (prefers-color-scheme: dark) {
